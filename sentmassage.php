@@ -9,7 +9,7 @@
    $message = $arrayJson['events'][0]['message']['text'];
    //รับ id ของผู้ใช้
    //$id = $arrayJson['events'][0]['source']['userId'];
-   $id='U8e35be7d054e420706555612de0321a0';
+   $id="U8e35be7d054e420706555612de0321a0";
    if($message == "นับ 1-10"){
        for($i=1;$i<=10;$i++){
           $arrayPostData['to'] = $id;
