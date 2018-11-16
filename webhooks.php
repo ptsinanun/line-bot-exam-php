@@ -28,7 +28,7 @@
     {
     $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = $urlWithoutProtocol;//"สวัสดีจ้าาา";//"สวัสดีจ้าาา";
+        $arrayPostData['messages'][0]['text'] = $followboat;//"สวัสดีจ้าาา";//"สวัสดีจ้าาา";
         replyMsg($arrayHeader,$arrayPostData);
     }
    $id = $arrayJson['events'][0]['source']['userId'];
