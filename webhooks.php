@@ -25,7 +25,13 @@
     
 
     curl_close($ch);
-
+    if($message)
+    {
+    $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = $followboat;//"สวัสดีจ้าาา";//"สวัสดีจ้าาา";
+        replyMsg($arrayHeader,$arrayPostData);
+    }
    $id = $arrayJson['events'][0]['source']['userId'];
 #ตัวอย่าง Message Type "Text"
     if($message == "สวัสดี"){
