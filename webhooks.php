@@ -11,20 +11,13 @@
     //รับข้อความจากผู้ใช้
     $message = $arrayJson['events'][0]['message']['text'];
     //รับ id ของผู้ใช้
-    $json = file_get_contents("http://fishlanding.fisheries.go.th/LbVmsErr/api/post/readTotalCheck.php?shipcode=358200021");
-    $data = json_decode($json, TRUE);
-
-    $followboat = array(); 
-
-    foreach($data['data']['item'] as $item) {
-        $followboat[] = $item['description'];
-    }
+    
    $id = $arrayJson['events'][0]['source']['userId'];
 #ตัวอย่าง Message Type "Text"
     if($message == "สวัสดี"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา".$followboat[0];//"สวัสดีจ้าาา";
+        $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";//"สวัสดีจ้าาา";
         replyMsg($arrayHeader,$arrayPostData);
     }
     #ตัวอย่าง Message Type "Sticker"
