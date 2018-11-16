@@ -14,7 +14,7 @@
     //รับ id ของผู้ใช้
     
     //$request = "format=csv&by=member&rs=hour&rk=productivity&rb=".$month_first_date."&re=".$cur_date = date('Y-m-d');
-    $urlWithoutProtocol = "http://fishlanding.fisheries.go.th/LbVmsErr/api/post/readTotalCheck.php?shipcode=358200021";//.$request ;
+    $urlWithoutProtocol = "http://fishlanding.fisheries.go.th/LbVmsErr/api/post/readTotalCheck.php?shipcode=".$message;//358200021";//.$request ;
     $isRequestHeader = FALSE;
 
     $ch = curl_init();
