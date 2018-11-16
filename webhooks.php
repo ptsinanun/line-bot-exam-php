@@ -14,7 +14,7 @@
     //รับ id ของผู้ใช้
     
     //$request = "format=csv&by=member&rs=hour&rk=productivity&rb=".$month_first_date."&re=".$cur_date = date('Y-m-d');
-    $urlWithoutProtocol = "http://fishlanding.fisheries.go.th/LbVmsErr/api/post/readTotalCheck.php?shipcode =".$message; 
+    $urlWithoutProtocol = "http://fishlanding.fisheries.go.th/LbVmsErr/api/post/readTotalCheck.php?shipcode = '".$message."'"; 
     $isRequestHeader = FALSE;
 
     $ch = curl_init();
@@ -29,7 +29,7 @@
     {
     $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = $message;//"สวัสดีจ้าาา";//"สวัสดีจ้าาา";
+        $arrayPostData['messages'][0]['text'] = $followboat;//"สวัสดีจ้าาา";//"สวัสดีจ้าาา";
         replyMsg($arrayHeader,$arrayPostData);
     }
    $id = $arrayJson['events'][0]['source']['userId'];
