@@ -8,10 +8,24 @@
     $arrayHeader[] = "Content-Type: application/json";
     $arrayHeader[] = "Authorization: Bearer {$accessToken}";
     
+
     //รับข้อความจากผู้ใช้
     $message = $arrayJson['events'][0]['message']['text'];
     //รับ id ของผู้ใช้
     
+    //$request = "format=csv&by=member&rs=hour&rk=productivity&rb=".$month_first_date."&re=".$cur_date = date('Y-m-d');
+    $urlWithoutProtocol = "http://fishlanding.fisheries.go.th/LbVmsErr/api/post/readTotalCheck.php?shipcode=358200021";//.$request ;
+    $isRequestHeader = FALSE;
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $urlWithoutProtocol);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    $followboat = array(); 
+    $followboat = curl_exec($ch);
+    
+
+    curl_close($ch);
+
    $id = $arrayJson['events'][0]['source']['userId'];
 #ตัวอย่าง Message Type "Text"
     if($message == "สวัสดี"){
