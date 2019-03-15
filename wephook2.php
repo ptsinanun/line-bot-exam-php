@@ -79,7 +79,7 @@
         $arrayPostData['messages'][1]['stickerId'] = "131";
         replyMsg($arrayHeader,$arrayPostData);
     }
-#$arrayPostData
+#$arrayPostData json_encode($arrayHeader)
 function replyMsg($arrayHeader,$arrayHeader){
         $strUrl = "https://api.line.me/v2/bot/message/reply";
         $ch = curl_init();
@@ -87,7 +87,7 @@ function replyMsg($arrayHeader,$arrayHeader){
         curl_setopt($ch, CURLOPT_HEADER, false);
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_HTTPHEADER, $arrayHeader);    
-        curl_setopt($ch, CURLOPT_POSTFIELDS,json_encode($arrayHeader));
+        curl_setopt($ch, CURLOPT_POSTFIELDS,$arrayHeader);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         $result = curl_exec($ch);
