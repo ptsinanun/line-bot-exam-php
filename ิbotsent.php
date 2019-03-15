@@ -1,7 +1,6 @@
 <?php
  
-$strAccessToken = "ACCESS_TOKEN";
- 
+$strAccessToken = "bzoR1o7SGTiW08M+fEh2yZKE0uDh3sz+WAFn1tnD9jQgtb/ZTrB72dyRz31j2XgOd1T1WLdqBgWgvxXd0GwYPqWgQKxcSDlXQ9C5mTgKcNt2tK5E8ig/IooS/kl+uMRnquQ8lFBMArent3hDwpx52wdB04t89/1O/w1cDnyilFU=";//copy Channel access token ตอนที่ตั้งค่ามาใส่
 $strUrl = "https://api.line.me/v2/bot/message/push";
  
 $arrHeader = array();
