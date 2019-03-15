@@ -10,6 +10,8 @@
     
     //รับข้อความจากผู้ใช้
     $message = $arrayJson['events'][0]['message']['text'];
+    $id = $arrayJson['events'][0]['source']['userId'];
+    array_push($followboat,$id);
     //รับ id ของผู้ใช้
     //$request = "format=csv&by=member&rs=hour&rk=productivity&rb=".$month_first_date."&re=".$cur_date = date('Y-m-d');
     $urlWithoutProtocol = "http://fishlanding.fisheries.go.th/LbVmsErr/api/post/readTotalCheck.php?shipcode=".$message; 
