@@ -79,7 +79,8 @@
         $arrayPostData['messages'][1]['stickerId'] = "131";
         replyMsg($arrayHeader,$arrayPostData);
     }
-function replyMsg($arrayHeader,$arrayPostData){
+#$arrayPostData
+function replyMsg($arrayHeader,$arrayHeader){
         $strUrl = "https://api.line.me/v2/bot/message/reply";
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL,$strUrl);
