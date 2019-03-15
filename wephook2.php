@@ -19,7 +19,7 @@
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     $followboat = array(); 
     $followboat = curl_exec($ch);
-    $followboat[] = $arrayJson['events'][0]['replyToken'];
+    #$followboat[] = $arrayJson['events'][0]['replyToken'];
     curl_close($ch);
     if($message)
     {
