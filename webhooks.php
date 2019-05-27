@@ -53,7 +53,7 @@
     else if ($message == "ท่าเทียบเรือ"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "กรุณากรอกทะเบียนท่า";//"สวัสดีจ้าาา";
+        $arrayPostData['messages'][0]['text'] = $request;//"สวัสดีจ้าาา";
         replyMsg($arrayHeader,$arrayPostData);
     }
     #ตัวอย่าง Message Type "Image"
