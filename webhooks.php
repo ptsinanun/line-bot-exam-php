@@ -50,10 +50,10 @@
         $arrayPostData['messages'][0]['stickerId'] = "46";
         replyMsg($arrayHeader,$arrayPostData);
     }
-    else if (preg_match("/\*\d{12}\#/", $message)){
+    else if(preg_match("/\*\d{12}\#/", $message)){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "userId:".$arrayJson['events'][0]['source']['userId']."ทะเบียนท่า:".substr($message,1,12);//"สวัสดีจ้าาา";
+        $arrayPostData['messages'][0]['text'] = $arrayJson['events'][0]['source']['userId'];//"สวัสดีจ้าาา";
         replyMsg($arrayHeader,$arrayPostData);
     }
     #ตัวอย่าง Message Type "Image"
