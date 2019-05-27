@@ -134,7 +134,7 @@
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "location";
         $arrayPostData['messages'][0]['title'] = $portobjrecive->port_name;
-        $arrayPostData['messages'][0]['address'] =   $portobjrecive->lat.",".$portobjrecive->long";
+        $arrayPostData['messages'][0]['address'] =   $portobjrecive->lat.",".$portobjrecive->long;
         $arrayPostData['messages'][0]['latitude'] = $portobjrecive->lat;
         $arrayPostData['messages'][0]['longitude'] = $portobjrecive->long;
         replyMsg($arrayHeader,$arrayPostData);
