@@ -65,11 +65,11 @@
         //
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        if($portobjrecive->id == 1)
+        if($portobjrecive->id == "1")
         {
         $arrayPostData['messages'][0]['text'] = "สวัสดีครับท่านผู้ประกอบการท่าเทียบเรือ:".$portobjrecive->port_name."  ทะเบียนท่า:".$portobjrecive->port_license;//"สวัสดีจ้าาา";
         }
-        else if($portobjrecive->id == 2)
+        else if($portobjrecive->id == "2")
         {
         $arrayPostData['messages'][0]['text'] = "คุณได้แจ้งท่าเทียบเรือไว้แล้ว ท่าเทียบเรือ:".$portobjrecive->port_name."  ทะเบียนท่า:".$portobjrecive->port_license;//"สวัสดีจ้าาา";    
         }
