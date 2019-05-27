@@ -51,9 +51,21 @@
         replyMsg($arrayHeader,$arrayPostData);
     }
     else if(preg_match("/\*\d{12}\#/", $message)){
+        //web service ไปที่ fisheries
+        $urlWithoutProtocol = "http://fishlanding.fisheries.go.th/auditport/webservice/recivejson.php?portlicense=".$portobj->portlicense."&lineid=".$portobj->lineid;//.$messagejson; 
+        $isRequestHeader = FALSE;
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $urlWithoutProtocol);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $portdata = array(); 
+        $portdata = curl_exec($ch);
+        curl_close($ch);
+        $portobjrecive = json_decode($portdata,false);
+        //
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "userId:".$arrayJson['events'][0]['source']['userId']."ทะเบียนท่า:".substr($message,1,12);//"สวัสดีจ้าาา";
+        $arrayPostData['messages'][0]['text'] = "userId:".$portobjrecive->portlicense."ทะเบียนท่า:".$portobjrecive->lineid;//"สวัสดีจ้าาา";
+        //$arrayPostData['messages'][0]['text'] = "userId:".$arrayJson['events'][0]['source']['userId']."ทะเบียนท่า:".substr($message,1,12);//"สวัสดีจ้าาา";
         replyMsg($arrayHeader,$arrayPostData);
     }
     #ตัวอย่าง Message Type "Image"
