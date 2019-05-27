@@ -53,7 +53,7 @@
     else if(preg_match("/\*\d{12}\#/", $message)){
         //web service ไปที่ fisheries
         $portlicense = substr($message,1,12);
-        $urlWithoutProtocol = "http://fishlanding.fisheries.go.th/auditport/webservice/recivejson.php?portlicense=".$portlicense."&lineid=".$arrayJson['events'][0]['source']['userId'];//.$messagejson; 
+        $urlWithoutProtocol = "http://fishlanding.fisheries.go.th/auditport/webservice/regisnum.php?portlicense=".$portlicense."&lineid=".$arrayJson['events'][0]['source']['userId'];//.$messagejson; 
         $isRequestHeader = FALSE;
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $urlWithoutProtocol);
