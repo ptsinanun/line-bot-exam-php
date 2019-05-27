@@ -42,6 +42,14 @@
         $arrayPostData['messages'][0]['text'] = $message;//$followboat;//"สวัสดีจ้าาา";//"สวัสดีจ้าาา";
         replyMsg($arrayHeader,$arrayPostData);
     }
+    if($message == "กฎหมาย"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "กฎกระทรวงการจดทะเบียนท่า";
+        replyMsg($arrayHeader,$arrayPostData);
+        $arrayPostData['messages'][0]['text'] = "https://drive.google.com/file/d/15vfrqjfIDGLo6pvBEaCrfzqZWn6w1so-/view?usp=sharing";//$followboat;//"สวัสดีจ้าาา";//"สวัสดีจ้าาา";
+        replyMsg($arrayHeader,$arrayPostData);
+    }
     #ตัวอย่าง Message Type "Sticker"
     else if($message == "ฝันดี"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
