@@ -65,7 +65,18 @@
         //
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "userId:".$portobjrecive->portlicense."  ทะเบียนท่า:".$portobjrecive->lineid;//"สวัสดีจ้าาา";
+        if($portobjrecive->id=1)
+        {
+        $arrayPostData['messages'][0]['text'] = "สวัสดีครับท่านผู้ประกอบการท่าเทียบเรือ:".$portobjrecive->port_name."  ทะเบียนท่า:".$portobjrecive->port_license;//"สวัสดีจ้าาา";
+        }
+        else if($portobjrecive->id=2)
+        {
+        $arrayPostData['messages'][0]['text'] = "คุณได้แจ้งท่าเทียบเรือไว้แล้ว ท่าเทียบเรือ:".$portobjrecive->port_name."  ทะเบียนท่า:".$portobjrecive->port_license;//"สวัสดีจ้าาา";    
+        }
+        else
+        {
+        $arrayPostData['messages'][0]['text'] = "ไม่พบหมายเลขทะเบียนท่าเทียบเรือนี้ กรุณาทดสอบอีกครั้ง";
+        }
         //$arrayPostData['messages'][0]['text'] = "userId:".$arrayJson['events'][0]['source']['userId']."/n ทะเบียนท่า:".substr($message,1,12);//"สวัสดีจ้าาา";
         replyMsg($arrayHeader,$arrayPostData);
     }
@@ -85,7 +96,14 @@
         //
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "userId:".$portobjrecive->portlicense."  ทะเบียนท่า:".$portobjrecive->lineid;//"สวัสดีจ้าาา";
+        if($portobjrecive->id=1)
+        {
+        $arrayPostData['messages'][0]['text'] = "สวัสดีครับท่านผู้ประกอบการท่าเทียบเรือ:".$portobjrecive->port_name."  ทะเบียนท่า:".$portobjrecive->port_license;//"สวัสดีจ้าาา";
+        }
+        else
+        {
+        $arrayPostData['messages'][0]['text'] = "ไม่พบหมายเลขทะเบียนท่าเทียบเรือนี้ กรุณาทดสอบอีกครั้ง";
+        }
         //$arrayPostData['messages'][0]['text'] = "userId:".$arrayJson['events'][0]['source']['userId']."/n ทะเบียนท่า:".substr($message,1,12);//"สวัสดีจ้าาา";
         replyMsg($arrayHeader,$arrayPostData);
     }
@@ -99,7 +117,7 @@
         replyMsg($arrayHeader,$arrayPostData);
     }
     #ตัวอย่าง Message Type "Location"
-    else if($message == "พิกัดสยามพารากอน"){
+    else if($message == "พิกัด"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "location";
         $arrayPostData['messages'][0]['title'] = "สยามพารากอน";
