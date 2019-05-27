@@ -1,6 +1,6 @@
 <?php
-    #$accessToken = "2+kmr9U8Sxdh//ZfzYzBI6COrngOo8ly7dCDl0aOU3DzRiPs2W0uX7GkwnuidzyizfWMD8XjlOFn7K3AcncUQ+cH9ZV07Fh/bxq8Dd0HMrDHOZfz8JBq3slQCAjmcZtCJzKUbdCMmb/QhSm+BDyGYgdB04t89/1O/w1cDnyilFU=";//copy Channel access token ตอนที่ตั้งค่ามาใส่
-    $accessToken = "bzoR1o7SGTiW08M+fEh2yZKE0uDh3sz+WAFn1tnD9jQgtb/ZTrB72dyRz31j2XgOd1T1WLdqBgWgvxXd0GwYPqWgQKxcSDlXQ9C5mTgKcNt2tK5E8ig/IooS/kl+uMRnquQ8lFBMArent3hDwpx52wdB04t89/1O/w1cDnyilFU=";//copy Channel access token ตอนที่ตั้งค่ามาใส่
+    $accessToken = "2+kmr9U8Sxdh//ZfzYzBI6COrngOo8ly7dCDl0aOU3DzRiPs2W0uX7GkwnuidzyizfWMD8XjlOFn7K3AcncUQ+cH9ZV07Fh/bxq8Dd0HMrDHOZfz8JBq3slQCAjmcZtCJzKUbdCMmb/QhSm+BDyGYgdB04t89/1O/w1cDnyilFU=";//copy Channel access token ตอนที่ตั้งค่ามาใส่
+    #$accessToken = "bzoR1o7SGTiW08M+fEh2yZKE0uDh3sz+WAFn1tnD9jQgtb/ZTrB72dyRz31j2XgOd1T1WLdqBgWgvxXd0GwYPqWgQKxcSDlXQ9C5mTgKcNt2tK5E8ig/IooS/kl+uMRnquQ8lFBMArent3hDwpx52wdB04t89/1O/w1cDnyilFU=";//copy Channel access token ตอนที่ตั้งค่ามาใส่
     
     $content = file_get_contents('php://input');
     $arrayJson = json_decode($content, true);
