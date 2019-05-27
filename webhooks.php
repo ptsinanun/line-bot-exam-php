@@ -1,5 +1,7 @@
 <?php
+    //LB sent messaging
     $accessToken = "2+kmr9U8Sxdh//ZfzYzBI6COrngOo8ly7dCDl0aOU3DzRiPs2W0uX7GkwnuidzyizfWMD8XjlOFn7K3AcncUQ+cH9ZV07Fh/bxq8Dd0HMrDHOZfz8JBq3slQCAjmcZtCJzKUbdCMmb/QhSm+BDyGYgdB04t89/1O/w1cDnyilFU=";//copy Channel access token ตอนที่ตั้งค่ามาใส่
+    //ไม่รู้
     #$accessToken = "bzoR1o7SGTiW08M+fEh2yZKE0uDh3sz+WAFn1tnD9jQgtb/ZTrB72dyRz31j2XgOd1T1WLdqBgWgvxXd0GwYPqWgQKxcSDlXQ9C5mTgKcNt2tK5E8ig/IooS/kl+uMRnquQ8lFBMArent3hDwpx52wdB04t89/1O/w1cDnyilFU=";//copy Channel access token ตอนที่ตั้งค่ามาใส่
     
     $content = file_get_contents('php://input');
@@ -14,7 +16,7 @@
     $message = $arrayJson['events'][0]['message']['text'];
     //รับ id ของผู้ใช้
     //$request = "format=csv&by=member&rs=hour&rk=productivity&rb=".$month_first_date."&re=".$cur_date = date('Y-m-d');
-    $urlWithoutProtocol = "http://fishlanding.fisheries.go.th/LbVmsErr/api/post/readTotalCheck.php?shipcode=".$message; 
+    /*$urlWithoutProtocol = "http://fishlanding.fisheries.go.th/LbVmsErr/api/post/readTotalCheck.php?shipcode=".$message; 
     $isRequestHeader = FALSE;
 
     $ch = curl_init();
@@ -24,7 +26,7 @@
     $followboat = curl_exec($ch);
     
 
-    curl_close($ch);
+    curl_close($ch);*/
     if($message)
     {
     $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
