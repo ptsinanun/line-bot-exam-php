@@ -66,7 +66,7 @@
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "userId:".$portobjrecive->portlicense."  ทะเบียนท่า:".$portobjrecive->lineid;//"สวัสดีจ้าาา";
-        //$arrayPostData['messages'][0]['text'] = "userId:".$arrayJson['events'][0]['source']['userId']."\n ทะเบียนท่า:".substr($message,1,12);//"สวัสดีจ้าาา";
+        //$arrayPostData['messages'][0]['text'] = "userId:".$arrayJson['events'][0]['source']['userId']."/n ทะเบียนท่า:".substr($message,1,12);//"สวัสดีจ้าาา";
         replyMsg($arrayHeader,$arrayPostData);
     }
     #ตัวอย่าง Message Type "Image"
