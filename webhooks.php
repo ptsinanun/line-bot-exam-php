@@ -44,7 +44,7 @@
         $arrayPostData['messages'][0]['text'] = $message;//$followboat;//"สวัสดีจ้าาา";//"สวัสดีจ้าาา";
         replyMsg($arrayHeader,$arrayPostData);
     }
-    if($message == "กฎหมาย"){
+    else if($message == "กฎหมาย"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "กฎกระทรวงการจดทะเบียนท่า : https://drive.google.com/file/d/15vfrqjfIDGLo6pvBEaCrfzqZWn6w1so-/view?usp=sharing";
