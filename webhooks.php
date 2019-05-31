@@ -48,8 +48,8 @@
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "การขอทะเบียนและการรับจดทะเบียนท่าเทียบเรือประมงhttps://drive.google.com/file/d/17HzCKf21n_fYp9Th9Lj5qz-3FBGA_NHP/view?usp=sharing";
-        $arrayPostData['messages'][0]['text'] = "/n การขอทะเบียนและการรับจดทะเบียนท่าเทียบเรือประมงฉบับที่ 2 : https://drive.google.com/file/d/15vfrqjfIDGLo6pvBEaCrfzqZWn6w1so-/view?usp=sharing";
-        $arrayPostData['messages'][0]['text'] .= "/n แบบคำขอจดทะเบียนท่าเทียบเรือประมง : https://drive.google.com/file/d/1uOo4JPbyGTkf06iQae6pJMMowVJOXRYk/view?usp=sharing";
+        $arrayPostData['messages'][0]['text'] .= "การขอทะเบียนและการรับจดทะเบียนท่าเทียบเรือประมงฉบับที่ 2 : https://drive.google.com/file/d/15vfrqjfIDGLo6pvBEaCrfzqZWn6w1so-/view?usp=sharing";
+        $arrayPostData['messages'][0]['text'] .= "แบบคำขอจดทะเบียนท่าเทียบเรือประมง : https://drive.google.com/file/d/1uOo4JPbyGTkf06iQae6pJMMowVJOXRYk/view?usp=sharing";
         replyMsg($arrayHeader,$arrayPostData);
         /*$arrayPostData['to'] = $id;
         $arrayPostData['messages'][0]['type'] = "text";
