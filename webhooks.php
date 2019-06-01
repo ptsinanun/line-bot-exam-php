@@ -47,9 +47,13 @@
     else if($message == "กฎหมาย"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "ก1 การขอทะเบียนและการรับจดทะเบียนท่าเทียบเรือประมง  https://drive.google.com/file/d/1yFb6XvuNVrRCGHsp4tZp7_qt2lel0KDF/view?usp=sharing";
-        $arrayPostData['messages'][0]['text'] .= "  ก2 การขอทะเบียนและการรับจดทะเบียนท่าเทียบเรือประมงฉบับที่ 2 : https://drive.google.com/file/d/1JI8m_Btm5EyUTQ2O71gaOid2XAgRxULf/view?usp=sharing";
-        $arrayPostData['messages'][0]['text'] .= "  ก3 แบบคำขอจดทะเบียนท่าเทียบเรือประมง : https://drive.google.com/file/d/1Eqghocn5wUr9itiWX8ESy3WzjYsgm4d0/view?usp=sharing";
+        $arrayPostData['messages'][0]['text'] = " การขอทะเบียนและการรับจดทะเบียนท่าเทียบเรือประมง  https://drive.google.com/file/d/1yFb6XvuNVrRCGHsp4tZp7_qt2lel0KDF/view?usp=sharing ";
+        $arrayPostData['messages'][0]['text'] .= " การขอทะเบียนและการรับจดทะเบียนท่าเทียบเรือประมงฉบับที่ 2 : https://drive.google.com/file/d/1JI8m_Btm5EyUTQ2O71gaOid2XAgRxULf/view?usp=sharing ";
+        $arrayPostData['messages'][0]['text'] .= " แบบคำขอจดทะเบียนท่าเทียบเรือประมง : https://drive.google.com/file/d/1Eqghocn5wUr9itiWX8ESy3WzjYsgm4d0/view?usp=sharing ";
+        $arrayPostData['messages'][0]['text'] .= " แบบบันทึกท่าเรือ https://drive.google.com/file/d/1--vKACb4zAjj2tnv73D6Pl59G4JjMOhT/view?usp=sharing ";
+        $arrayPostData['messages'][0]['text'] .= " mcpd ขนส่งทางรถยนต์ https://drive.google.com/file/d/1-59TeKPNE0mYGaI-6rCKY2GyE5hNAYEC/view?usp=sharing ";
+        $arrayPostData['messages'][0]['text'] .= " mcpd https://drive.google.com/file/d/1-2U8GQONSHxryRLigde5wvaESgfQl75O/view?usp=sharing ";
+        $arrayPostData['messages'][0]['text'] .= " มอบอำนาจ https://drive.google.com/file/d/1Eqghocn5wUr9itiWX8ESy3WzjYsgm4d0/view?usp=sharing ";
         replyMsg($arrayHeader,$arrayPostData);
         /*$arrayPostData['to'] = $id;
         $arrayPostData['messages'][0]['type'] = "text";
