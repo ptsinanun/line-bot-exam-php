@@ -174,7 +174,7 @@
     }
     else
     {
-        $image_url = "https://drive.google.com/open?id=1hhTetd81QThwygYeLe3-C0EbtFFSJhY_";
+        $image_url = "https://i.pinimg.com/originals/c3/b5/04/c3b504b3354d4b349e98d0b3c01c84ea.png";
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "image";
         $arrayPostData['messages'][0]['originalContentUrl'] = $image_url;
