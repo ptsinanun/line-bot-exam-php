@@ -126,7 +126,7 @@
         }
         else
         {
-        $arrayPostData['messages'][0]['text'] = "ไม่พบหมายเลขประจำศูนย์ กรุณาทดสอบอีกครั้ง";
+        $arrayPostData['messages'][0]['text'] = "ไม่พบหมายเลขประจำศูนย์ กรุณาทดสอบอีกครั้ง".$pipo_obj_recive->pipo_name;
         }
         //$arrayPostData['messages'][0]['text'] = "userId:".$arrayJson['events'][0]['source']['userId']."/n ทะเบียนท่า:".substr($message,1,12);//"สวัสดีจ้าาา";
         replyMsg($arrayHeader,$arrayPostData);
