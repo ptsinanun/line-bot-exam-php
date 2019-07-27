@@ -124,9 +124,13 @@
         {
         $arrayPostData['messages'][0]['text'] = "สวัสดีครับท่านเจ้าหน้าที่ประจำศูนย์ :".$pipo_obj_recive->pipo_name."  หมายเลขประจำศูนย์ :".$pipo_obj_recive->pipo_id;//"สวัสดีจ้าาา";
         }
-        else
+        else if($pipo_obj_recive->id == "0")
         {
         $arrayPostData['messages'][0]['text'] = "ไม่พบหมายเลขประจำศูนย์ กรุณาทดสอบอีกครั้ง".$pipo_obj_recive->pipo_name;
+        }
+        else
+        {
+        $arrayPostData['messages'][0]['text'] = "ไม่รู้ว่าเกิดไร";
         }
         //$arrayPostData['messages'][0]['text'] = "userId:".$arrayJson['events'][0]['source']['userId']."/n ทะเบียนท่า:".substr($message,1,12);//"สวัสดีจ้าาา";
         replyMsg($arrayHeader,$arrayPostData);
