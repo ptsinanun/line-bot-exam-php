@@ -106,30 +106,27 @@
         replyMsg($arrayHeader,$arrayPostData);
      } 
     else if(preg_match("/\##\d{3}\##/", $message)){
+        //web service ไปที่ fisheries
         $center_id = substr($message,2,3);
-        $urlWithoutProtocol = "http://fishlanding.fisheries.go.th/auditport/webservice/regis_pipo.php?center_id=".$center_id."&lineid=".$arrayJson['events'][0]['source']['userId'];//.$messagejson; 
+        $urlWithoutProtocol = "http://fishlanding.fisheries.go.th/auditport/webservice/update_pipo.php?center_id=".$center_id."&lineid=".$arrayJson['events'][0]['source']['userId'];//.$messagejson; 
         $isRequestHeader = FALSE;
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $urlWithoutProtocol);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        $portdata = array(); 
-        $portdata = curl_exec($ch);
+        $pipo_data = array(); 
+        $pipo_data = curl_exec($ch);
         curl_close($ch);
-        $portobjrecive = json_decode($portdata,false);
+        $pipo_obj_recive = json_decode($pipo_data,false);
         //
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        if($portobjrecive->id == "1")
+        if($pipo_obj_recive->id == "1")
         {
-        $arrayPostData['messages'][0]['text'] = "สวัสดีครับท่านเจ้าหน้าที่ประจำศูนย์ :".$portobjrecive->port_name."  ทะเบียนท่า:".$portobjrecive->port_license;//"สวัสดีจ้าาา";
-        }
-        else if($portobjrecive->id == "2")
-        {
-        $arrayPostData['messages'][0]['text'] = "คุณได้แจ้งลงทะเบียนกับระบบไว้แล้ว ท่านเจ้าหน้าที่ประจำศูนย์:".$portobjrecive->port_name."  ทะเบียนท่า:".$portobjrecive->port_license;//"สวัสดีจ้าาา";    
+        $arrayPostData['messages'][0]['text'] = "สวัสดีครับท่านเจ้าหน้าที่ประจำศูนย์ :".$pipo_obj_recive->pipo_name."  หมายเลขประจำศูนย์ :".$pipo_obj_recive->pipo_id;//"สวัสดีจ้าาา";
         }
         else
         {
-        $arrayPostData['messages'][0]['text'] = "ไม่พบหมายเลขรหัสประจำศูนย์ กรุณาทดสอบอีกครั้ง";
+        $arrayPostData['messages'][0]['text'] = "ไม่พบหมายเลขประจำศูนย์ กรุณาทดสอบอีกครั้ง";
         }
         //$arrayPostData['messages'][0]['text'] = "userId:".$arrayJson['events'][0]['source']['userId']."/n ทะเบียนท่า:".substr($message,1,12);//"สวัสดีจ้าาา";
         replyMsg($arrayHeader,$arrayPostData);
