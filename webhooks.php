@@ -76,8 +76,8 @@
     #ลงทะเบียน PIPO
 
 
-     else if(preg_match("/\**\d{3}\##/", $message)){
-        $center_id = substr($message,2,3);
+     else if(preg_match("/\#\d{3}\##/", $message)){
+        $center_id = substr($message,1,3);
         $urlWithoutProtocol = "http://fishlanding.fisheries.go.th/auditport/webservice/regis_pipo.php?center_id=".$center_id."&lineid=".$arrayJson['events'][0]['source']['userId'];//.$messagejson; 
         $isRequestHeader = FALSE;
         $ch = curl_init();
