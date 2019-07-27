@@ -106,7 +106,7 @@
        
          replyMsg($arrayHeader,$arrayPostData);
      } 
-    else if(preg_match("/\*#\d{3}\##/", $message)){
+    else if(preg_match("/\A1\d{3}\##/", $message)){
         //web service ไปที่ fisheries
         $center_id = substr($message,2,3);
         $urlWithoutProtocol = "http://fishlanding.fisheries.go.th/auditport/webservice/update_pipo.php?center_id=".$center_id."&lineid=".$arrayJson['events'][0]['source']['userId'];//.$messagejson; 
