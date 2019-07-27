@@ -92,11 +92,11 @@
         $arrayPostData['messages'][0]['type'] = "text";
         if($pipo_obj_recive->id == "1")
         {
-        $arrayPostData['messages'][0]['text'] = "สวัสดีครับท่านเจ้าหน้าที่ประจำศูนย์ :".$pipo_obj_recive->pipo_name."  หมายเลขประจำศูนย์ :".$portobjrecive->pipo_id;//"สวัสดีจ้าาา";
+        $arrayPostData['messages'][0]['text'] = "สวัสดีครับท่านเจ้าหน้าที่ประจำศูนย์ :".$pipo_obj_recive->pipo_name."  หมายเลขประจำศูนย์ :".$pipo_obj_recive->pipo_id;//"สวัสดีจ้าาา";
         }
         else if($pipo_obj_recive->id == "2")
         {
-        $arrayPostData['messages'][0]['text'] = "คุณได้แจ้งลงทะเบียนกับระบบไว้แล้ว เป็นเจ้าหน้าที่ประจำศูนย์:".$pipo_obj_recive->pipo_name."  หมายเลขประจำศูนย์ :".$portobjrecive->pipo_id;//"สวัสดีจ้าาา";    
+        $arrayPostData['messages'][0]['text'] = "คุณได้แจ้งลงทะเบียนกับระบบไว้แล้ว เป็นเจ้าหน้าที่ประจำศูนย์:".$pipo_obj_recive->pipo_name."  หมายเลขประจำศูนย์ :".$pipo_obj_recive->pipo_id;//"สวัสดีจ้าาา";    
         }
         else
         {
