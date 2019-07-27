@@ -76,7 +76,7 @@
     #ลงทะเบียน PIPO
 
 
-     else if(preg_match("/\#\d{3}\##/", $message)){
+     else if(preg_match("/\#\d{3}\#/", $message)){
         $center_id = substr($message,1,3);
         $urlWithoutProtocol = "http://fishlanding.fisheries.go.th/auditport/webservice/regis_pipo.php?center_id=".$center_id."&lineid=".$arrayJson['events'][0]['source']['userId'];//.$messagejson; 
         $isRequestHeader = FALSE;
@@ -106,7 +106,7 @@
        
          replyMsg($arrayHeader,$arrayPostData);
      } 
-    else if(preg_match("/\#\d{3}\#/", $message)){
+    else if(preg_match("/\#\d{3}\##/", $message)){
         //web service ไปที่ fisheries
         $center_id = substr($message,1,3);
         $urlWithoutProtocol = "http://fishlanding.fisheries.go.th/auditport/webservice/update_pipo.php?center_id=".$center_id."&lineid=".$arrayJson['events'][0]['source']['userId'];//.$messagejson; 
@@ -134,7 +134,6 @@
         $arrayPostData['messages'][0]['text'] = "ไม่รู้ว่าเกิดไร";
         }
         //$arrayPostData['messages'][0]['text'] = "userId:".$arrayJson['events'][0]['source']['userId']."/n ทะเบียนท่า:".substr($message,1,12);//"สวัสดีจ้าาา";
-       $arrayPostData['messages'][0]['text'] = $arrayJson['events'][0]['source']['userId'];
         replyMsg($arrayHeader,$arrayPostData);
      }
 
