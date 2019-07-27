@@ -60,7 +60,6 @@
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "ทดสอบการส่งซ้ำ";
         pushMsg($arrayHeader,$arrayPostData);*/
-    }*/
     #ตัวอย่าง Message Type "Sticker"
     else if($message == "ฝันดี"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
