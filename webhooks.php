@@ -45,7 +45,7 @@
         $arrayPostData['messages'][0]['text'] = $message;//$followboat;//"สวัสดีจ้าาา";//"สวัสดีจ้าาา";
         replyMsg($arrayHeader,$arrayPostData);
     }
-    else if($message == "กฎหมาย"){
+    /*else if($message == "กฎหมาย"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = " การขอทะเบียนและการรับจดทะเบียนท่าเทียบเรือประมง  https://drive.google.com/file/d/1yFb6XvuNVrRCGHsp4tZp7_qt2lel0KDF/view?usp=sharing ";
@@ -60,7 +60,7 @@
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "ทดสอบการส่งซ้ำ";
         pushMsg($arrayHeader,$arrayPostData);*/
-    }
+    }*/
     #ตัวอย่าง Message Type "Sticker"
     else if($message == "ฝันดี"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
@@ -68,11 +68,83 @@
         $arrayPostData['messages'][0]['packageId'] = "2";
         $arrayPostData['messages'][0]['stickerId'] = "46";
         replyMsg($arrayHeader,$arrayPostData);
-    }
+    } #(preg_match("/\#\d{12}\#/", $message))
+
+    #ลงทะเบียน PIPO
+    #ลงทะเบียน PIPO
+    #ลงทะเบียน PIPO
+    #ลงทะเบียน PIPO
+    #ลงทะเบียน PIPO
+
+
+     else if(preg_match("/\**\d{3}\##/", $message)){
+        $center_id = substr($message,2,3);
+        $urlWithoutProtocol = "http://fishlanding.fisheries.go.th/auditport/webservice/regis_pipo.php?center_id=".$center_id."&lineid=".$arrayJson['events'][0]['source']['userId'];//.$messagejson; 
+        $isRequestHeader = FALSE;
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $urlWithoutProtocol);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $pipo_data = array(); 
+        $pipo_data = curl_exec($ch);
+        curl_close($ch);
+        $pipo_obj_recive = json_decode($pipo_data,false);
+        //
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        if($pipo_obj_recive->id == "1")
+        {
+        $arrayPostData['messages'][0]['text'] = "สวัสดีครับท่านเจ้าหน้าที่ประจำศูนย์ :".$pipo_obj_recive->pipo_name."  หมายเลขประจำศูนย์ :".$portobjrecive->pipo_id;//"สวัสดีจ้าาา";
+        }
+        else if($pipo_obj_recive->id == "2")
+        {
+        $arrayPostData['messages'][0]['text'] = "คุณได้แจ้งลงทะเบียนกับระบบไว้แล้ว เป็นเจ้าหน้าที่ประจำศูนย์:".$pipo_obj_recive->pipo_name."  หมายเลขประจำศูนย์ :".$portobjrecive->pipo_id;//"สวัสดีจ้าาา";    
+        }
+        else
+        {
+        $arrayPostData['messages'][0]['text'] = "ไม่พบหมายเลขรหัสประจำศูนย์ กรุณาทดสอบอีกครั้ง";
+        }
+        //$arrayPostData['messages'][0]['text'] = "userId:".$arrayJson['events'][0]['source']['userId']."/n ทะเบียนท่า:".substr($message,1,12);//"สวัสดีจ้าาา";
+        replyMsg($arrayHeader,$arrayPostData);
+     } 
+    else if(preg_match("/\##\d{3}\##/", $message)){
+        $center_id = substr($message,2,3);
+        $urlWithoutProtocol = "http://fishlanding.fisheries.go.th/auditport/webservice/regis_pipo.php?center_id=".$center_id."&lineid=".$arrayJson['events'][0]['source']['userId'];//.$messagejson; 
+        $isRequestHeader = FALSE;
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $urlWithoutProtocol);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $portdata = array(); 
+        $portdata = curl_exec($ch);
+        curl_close($ch);
+        $portobjrecive = json_decode($portdata,false);
+        //
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        if($portobjrecive->id == "1")
+        {
+        $arrayPostData['messages'][0]['text'] = "สวัสดีครับท่านเจ้าหน้าที่ประจำศูนย์ :".$portobjrecive->port_name."  ทะเบียนท่า:".$portobjrecive->port_license;//"สวัสดีจ้าาา";
+        }
+        else if($portobjrecive->id == "2")
+        {
+        $arrayPostData['messages'][0]['text'] = "คุณได้แจ้งลงทะเบียนกับระบบไว้แล้ว ท่านเจ้าหน้าที่ประจำศูนย์:".$portobjrecive->port_name."  ทะเบียนท่า:".$portobjrecive->port_license;//"สวัสดีจ้าาา";    
+        }
+        else
+        {
+        $arrayPostData['messages'][0]['text'] = "ไม่พบหมายเลขรหัสประจำศูนย์ กรุณาทดสอบอีกครั้ง";
+        }
+        //$arrayPostData['messages'][0]['text'] = "userId:".$arrayJson['events'][0]['source']['userId']."/n ทะเบียนท่า:".substr($message,1,12);//"สวัสดีจ้าาา";
+        replyMsg($arrayHeader,$arrayPostData);
+     }
+
+
+    #ลงทะเบียน ท่าเทียบเรือประมง
+    #ลงทะเบียน ท่าเทียบเรือประมง
+    #ลงทะเบียน ท่าเทียบเรือประมง
+    #ลงทะเบียน ท่าเทียบเรือประมง
     else if(preg_match("/\*\d{12}\#/", $message)){
         //web service ไปที่ fisheries
         $portlicense = substr($message,1,12);
-        $urlWithoutProtocol = "http://fishlanding.fisheries.go.th/auditport/webservice/regisnum.php?portlicense=".$portlicense."&lineid=".$arrayJson['events'][0]['source']['userId'];//.$messagejson; 
+        $urlWithoutProtocol = "http://fishlanding.fisheries.go.th/auditport/webservice/regis_port.php?portlicense=".$portlicense."&lineid=".$arrayJson['events'][0]['source']['userId'];//.$messagejson; 
         $isRequestHeader = FALSE;
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $urlWithoutProtocol);
