@@ -103,7 +103,8 @@
         $arrayPostData['messages'][0]['text'] = "ไม่พบหมายเลขรหัสประจำศูนย์ กรุณาทดสอบอีกครั้ง";
         }
         //$arrayPostData['messages'][0]['text'] = "userId:".$arrayJson['events'][0]['source']['userId']."/n ทะเบียนท่า:".substr($message,1,12);//"สวัสดีจ้าาา";
-        replyMsg($arrayHeader,$arrayPostData);
+       
+         replyMsg($arrayHeader,$arrayPostData);
      } 
     else if(preg_match("/\##\d{3}\##/", $message)){
         //web service ไปที่ fisheries
@@ -133,6 +134,7 @@
         $arrayPostData['messages'][0]['text'] = "ไม่รู้ว่าเกิดไร";
         }
         //$arrayPostData['messages'][0]['text'] = "userId:".$arrayJson['events'][0]['source']['userId']."/n ทะเบียนท่า:".substr($message,1,12);//"สวัสดีจ้าาา";
+       $arrayPostData['messages'][0]['text'] = $arrayJson['events'][0]['source']['userId'];
         replyMsg($arrayHeader,$arrayPostData);
      }
 
