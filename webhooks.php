@@ -45,7 +45,7 @@
         $arrayPostData['messages'][0]['text'] = $message;//$followboat;//"สวัสดีจ้าาา";//"สวัสดีจ้าาา";
         replyMsg($arrayHeader,$arrayPostData);
     }
-    /*else if($message == "กฎหมาย"){
+    else if($message == "กฎหมาย"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = " การขอทะเบียนและการรับจดทะเบียนท่าเทียบเรือประมง  https://drive.google.com/file/d/1yFb6XvuNVrRCGHsp4tZp7_qt2lel0KDF/view?usp=sharing ";
@@ -60,7 +60,8 @@
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "ทดสอบการส่งซ้ำ";
         pushMsg($arrayHeader,$arrayPostData);*/
-    #ตัวอย่าง Message Type "Sticker"
+    }
+        #ตัวอย่าง Message Type "Sticker"
     else if($message == "ฝันดี"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "sticker";
