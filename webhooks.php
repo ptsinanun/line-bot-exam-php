@@ -249,12 +249,13 @@
     }
     else
     {
-        $image_url = "https://i.pinimg.com/originals/45/58/f2/4558f283edff170b4ec9046779bb5d41.png";
+     /*   $image_url = "https://i.pinimg.com/originals/45/58/f2/4558f283edff170b4ec9046779bb5d41.png";
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "image";
         $arrayPostData['messages'][0]['originalContentUrl'] = $image_url;
         $arrayPostData['messages'][0]['previewImageUrl'] = $image_url;
         replyMsg($arrayHeader,$arrayPostData);
+    */
     }
 function replyMsg($arrayHeader,$arrayPostData){
         $strUrl = "https://api.line.me/v2/bot/message/reply";
